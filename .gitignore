@@ -1,0 +1,9 @@
+# Private files.
+*.pdf
+*.docx
+*.xlsx
+*.rtf
+
+# Misc.
+*.*~
+.DS_Store
