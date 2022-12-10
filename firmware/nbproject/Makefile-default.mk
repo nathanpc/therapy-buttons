@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=
+SOURCEFILES_QUOTED_IF_SPACED=src/buscomm.c src/main.c src/nvmconfig.c src/pwm.c src/strutils.c src/uart.c src/rtc.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=
-POSSIBLE_DEPFILES=
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/src/buscomm.o ${OBJECTDIR}/src/main.o ${OBJECTDIR}/src/nvmconfig.o ${OBJECTDIR}/src/pwm.o ${OBJECTDIR}/src/strutils.o ${OBJECTDIR}/src/uart.o ${OBJECTDIR}/src/rtc.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/src/buscomm.o.d ${OBJECTDIR}/src/main.o.d ${OBJECTDIR}/src/nvmconfig.o.d ${OBJECTDIR}/src/pwm.o.d ${OBJECTDIR}/src/strutils.o.d ${OBJECTDIR}/src/uart.o.d ${OBJECTDIR}/src/rtc.o.d
 
 # Object Files
-OBJECTFILES=
+OBJECTFILES=${OBJECTDIR}/src/buscomm.o ${OBJECTDIR}/src/main.o ${OBJECTDIR}/src/nvmconfig.o ${OBJECTDIR}/src/pwm.o ${OBJECTDIR}/src/strutils.o ${OBJECTDIR}/src/uart.o ${OBJECTDIR}/src/rtc.o
 
 # Source Files
-SOURCEFILES=
+SOURCEFILES=src/buscomm.c src/main.c src/nvmconfig.c src/pwm.c src/strutils.c src/uart.c src/rtc.c
 
 
 
@@ -94,7 +94,91 @@ MP_PROCESSOR_OPTION=ATtiny806
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
+${OBJECTDIR}/src/buscomm.o: src/buscomm.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/src" 
+	@${RM} ${OBJECTDIR}/src/buscomm.o.d 
+	@${RM} ${OBJECTDIR}/src/buscomm.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -DF_CPU=20000000 -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/src/buscomm.o.d" -MT "${OBJECTDIR}/src/buscomm.o.d" -MT ${OBJECTDIR}/src/buscomm.o -o ${OBJECTDIR}/src/buscomm.o src/buscomm.c 
+	
+${OBJECTDIR}/src/main.o: src/main.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/src" 
+	@${RM} ${OBJECTDIR}/src/main.o.d 
+	@${RM} ${OBJECTDIR}/src/main.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -DF_CPU=20000000 -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/src/main.o.d" -MT "${OBJECTDIR}/src/main.o.d" -MT ${OBJECTDIR}/src/main.o -o ${OBJECTDIR}/src/main.o src/main.c 
+	
+${OBJECTDIR}/src/nvmconfig.o: src/nvmconfig.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/src" 
+	@${RM} ${OBJECTDIR}/src/nvmconfig.o.d 
+	@${RM} ${OBJECTDIR}/src/nvmconfig.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -DF_CPU=20000000 -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/src/nvmconfig.o.d" -MT "${OBJECTDIR}/src/nvmconfig.o.d" -MT ${OBJECTDIR}/src/nvmconfig.o -o ${OBJECTDIR}/src/nvmconfig.o src/nvmconfig.c 
+	
+${OBJECTDIR}/src/pwm.o: src/pwm.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/src" 
+	@${RM} ${OBJECTDIR}/src/pwm.o.d 
+	@${RM} ${OBJECTDIR}/src/pwm.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -DF_CPU=20000000 -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/src/pwm.o.d" -MT "${OBJECTDIR}/src/pwm.o.d" -MT ${OBJECTDIR}/src/pwm.o -o ${OBJECTDIR}/src/pwm.o src/pwm.c 
+	
+${OBJECTDIR}/src/strutils.o: src/strutils.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/src" 
+	@${RM} ${OBJECTDIR}/src/strutils.o.d 
+	@${RM} ${OBJECTDIR}/src/strutils.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -DF_CPU=20000000 -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/src/strutils.o.d" -MT "${OBJECTDIR}/src/strutils.o.d" -MT ${OBJECTDIR}/src/strutils.o -o ${OBJECTDIR}/src/strutils.o src/strutils.c 
+	
+${OBJECTDIR}/src/uart.o: src/uart.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/src" 
+	@${RM} ${OBJECTDIR}/src/uart.o.d 
+	@${RM} ${OBJECTDIR}/src/uart.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -DF_CPU=20000000 -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/src/uart.o.d" -MT "${OBJECTDIR}/src/uart.o.d" -MT ${OBJECTDIR}/src/uart.o -o ${OBJECTDIR}/src/uart.o src/uart.c 
+	
+${OBJECTDIR}/src/rtc.o: src/rtc.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/src" 
+	@${RM} ${OBJECTDIR}/src/rtc.o.d 
+	@${RM} ${OBJECTDIR}/src/rtc.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -DF_CPU=20000000 -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/src/rtc.o.d" -MT "${OBJECTDIR}/src/rtc.o.d" -MT ${OBJECTDIR}/src/rtc.o -o ${OBJECTDIR}/src/rtc.o src/rtc.c 
+	
 else
+${OBJECTDIR}/src/buscomm.o: src/buscomm.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/src" 
+	@${RM} ${OBJECTDIR}/src/buscomm.o.d 
+	@${RM} ${OBJECTDIR}/src/buscomm.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -DF_CPU=20000000 -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/src/buscomm.o.d" -MT "${OBJECTDIR}/src/buscomm.o.d" -MT ${OBJECTDIR}/src/buscomm.o -o ${OBJECTDIR}/src/buscomm.o src/buscomm.c 
+	
+${OBJECTDIR}/src/main.o: src/main.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/src" 
+	@${RM} ${OBJECTDIR}/src/main.o.d 
+	@${RM} ${OBJECTDIR}/src/main.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -DF_CPU=20000000 -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/src/main.o.d" -MT "${OBJECTDIR}/src/main.o.d" -MT ${OBJECTDIR}/src/main.o -o ${OBJECTDIR}/src/main.o src/main.c 
+	
+${OBJECTDIR}/src/nvmconfig.o: src/nvmconfig.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/src" 
+	@${RM} ${OBJECTDIR}/src/nvmconfig.o.d 
+	@${RM} ${OBJECTDIR}/src/nvmconfig.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -DF_CPU=20000000 -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/src/nvmconfig.o.d" -MT "${OBJECTDIR}/src/nvmconfig.o.d" -MT ${OBJECTDIR}/src/nvmconfig.o -o ${OBJECTDIR}/src/nvmconfig.o src/nvmconfig.c 
+	
+${OBJECTDIR}/src/pwm.o: src/pwm.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/src" 
+	@${RM} ${OBJECTDIR}/src/pwm.o.d 
+	@${RM} ${OBJECTDIR}/src/pwm.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -DF_CPU=20000000 -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/src/pwm.o.d" -MT "${OBJECTDIR}/src/pwm.o.d" -MT ${OBJECTDIR}/src/pwm.o -o ${OBJECTDIR}/src/pwm.o src/pwm.c 
+	
+${OBJECTDIR}/src/strutils.o: src/strutils.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/src" 
+	@${RM} ${OBJECTDIR}/src/strutils.o.d 
+	@${RM} ${OBJECTDIR}/src/strutils.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -DF_CPU=20000000 -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/src/strutils.o.d" -MT "${OBJECTDIR}/src/strutils.o.d" -MT ${OBJECTDIR}/src/strutils.o -o ${OBJECTDIR}/src/strutils.o src/strutils.c 
+	
+${OBJECTDIR}/src/uart.o: src/uart.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/src" 
+	@${RM} ${OBJECTDIR}/src/uart.o.d 
+	@${RM} ${OBJECTDIR}/src/uart.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -DF_CPU=20000000 -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/src/uart.o.d" -MT "${OBJECTDIR}/src/uart.o.d" -MT ${OBJECTDIR}/src/uart.o -o ${OBJECTDIR}/src/uart.o src/uart.c 
+	
+${OBJECTDIR}/src/rtc.o: src/rtc.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/src" 
+	@${RM} ${OBJECTDIR}/src/rtc.o.d 
+	@${RM} ${OBJECTDIR}/src/rtc.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -DF_CPU=20000000 -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/src/rtc.o.d" -MT "${OBJECTDIR}/src/rtc.o.d" -MT ${OBJECTDIR}/src/rtc.o -o ${OBJECTDIR}/src/rtc.o src/rtc.c 
+	
 endif
 
 # ------------------------------------------------------------------------------------
@@ -114,13 +198,13 @@ endif
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 ${DISTDIR}/firmware.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
 	@${MKDIR} ${DISTDIR} 
-	${MP_CC} $(MP_EXTRA_LD_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -Wl,-Map=${DISTDIR}/firmware.${IMAGE_TYPE}.map  -D__DEBUG=1  -DXPRJ_default=$(CND_CONF)  -Wl,--defsym=__MPLAB_BUILD=1   -mdfp="${DFP_DIR}/xc8"   -gdwarf-2 -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -gdwarf-3     $(COMPARISON_BUILD) -Wl,--memorysummary,${DISTDIR}/memoryfile.xml -o ${DISTDIR}/firmware.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  -o ${DISTDIR}/firmware.${IMAGE_TYPE}.${OUTPUT_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}      -Wl,--start-group  -Wl,-lm -Wl,--end-group  -Wl,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1
+	${MP_CC} $(MP_EXTRA_LD_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -Wl,-Map=${DISTDIR}/firmware.${IMAGE_TYPE}.map  -D__DEBUG=1  -DXPRJ_default=$(CND_CONF)  -Wl,--defsym=__MPLAB_BUILD=1   -mdfp="${DFP_DIR}/xc8"   -gdwarf-2 -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -DF_CPU=20000000 -Wall -gdwarf-3     $(COMPARISON_BUILD) -Wl,--memorysummary,${DISTDIR}/memoryfile.xml -o ${DISTDIR}/firmware.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  -o ${DISTDIR}/firmware.${IMAGE_TYPE}.${OUTPUT_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}      -Wl,--start-group  -Wl,-lm -Wl,--end-group  -Wl,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1
 	@${RM} ${DISTDIR}/firmware.${IMAGE_TYPE}.hex 
 	
 else
 ${DISTDIR}/firmware.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   
 	@${MKDIR} ${DISTDIR} 
-	${MP_CC} $(MP_EXTRA_LD_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -Wl,-Map=${DISTDIR}/firmware.${IMAGE_TYPE}.map  -DXPRJ_default=$(CND_CONF)  -Wl,--defsym=__MPLAB_BUILD=1   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -gdwarf-3     $(COMPARISON_BUILD) -Wl,--memorysummary,${DISTDIR}/memoryfile.xml -o ${DISTDIR}/firmware.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  -o ${DISTDIR}/firmware.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}      -Wl,--start-group  -Wl,-lm -Wl,--end-group 
+	${MP_CC} $(MP_EXTRA_LD_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -Wl,-Map=${DISTDIR}/firmware.${IMAGE_TYPE}.map  -DXPRJ_default=$(CND_CONF)  -Wl,--defsym=__MPLAB_BUILD=1   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -DF_CPU=20000000 -Wall -gdwarf-3     $(COMPARISON_BUILD) -Wl,--memorysummary,${DISTDIR}/memoryfile.xml -o ${DISTDIR}/firmware.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  -o ${DISTDIR}/firmware.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}      -Wl,--start-group  -Wl,-lm -Wl,--end-group 
 	${MP_CC_DIR}/avr-objcopy -O ihex "${DISTDIR}/firmware.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}" "${DISTDIR}/firmware.${IMAGE_TYPE}.hex"
 endif
 

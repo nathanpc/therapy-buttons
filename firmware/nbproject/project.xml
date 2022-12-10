@@ -6,19 +6,21 @@
             <name>TherapyButtons</name>
             <creation-uuid>2cb30092-db30-4ead-acb8-3f3720b20bcf</creation-uuid>
             <make-project-type>0</make-project-type>
-            <c-extensions/>
+            <c-extensions>c</c-extensions>
             <cpp-extensions/>
-            <header-extensions/>
+            <header-extensions>h</header-extensions>
             <asminc-extensions/>
+            <sourceEncoding>UTF-8</sourceEncoding>
             <make-dep-projects/>
-            <sourceRootList/>
+            <sourceRootList>
+                <sourceRootElem>src</sourceRootElem>
+            </sourceRootList>
             <confList>
                 <confElem>
                     <name>default</name>
                     <type>2</type>
                 </confElem>
             </confList>
-            <sourceEncoding>UTF-8</sourceEncoding>
             <formatting>
                 <project-formatting-style>false</project-formatting-style>
             </formatting>

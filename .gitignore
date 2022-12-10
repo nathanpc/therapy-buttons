@@ -7,3 +7,5 @@
 # Misc.
 *.*~
 .DS_Store
+/firmware/build/
+/firmware/dist/

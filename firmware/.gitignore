@@ -1,17 +1,17 @@
 # Firmware.
-*.X/html/
-*.X/nbproject/private/
-*.X/nbproject/Package-*.bash
-*.X/build/
-*.X/nbbuild/
-*.X/dist/
-*.X/nbdist/
-*.X/nbactions.xml
-*.X/nb-configuration.xml
-*.X/funclist
-*.X/nbproject/Makefile-*
-*.X/disassembly/
-*.X/.generated_files/
+/html/
+/nbproject/private/
+/nbproject/Package-*.bash
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/nbactions.xml
+/nb-configuration.xml
+/funclist
+/nbproject/Makefile-*
+/disassembly/
+/.generated_files/
 
 # MPLAB X.
 *.d
