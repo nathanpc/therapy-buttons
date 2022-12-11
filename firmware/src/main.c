@@ -69,9 +69,9 @@ int main(void) {
  */
 void Comms_HandleCommand(const comms_frame_t *frame) {
 	uint8_t tmp = 0;
-	/*
+
 	// Handle programming commands.
-	if (!(PORTB.IN & PROG)) {
+	if (!(PORTC.IN & WALL_SW)) {
 		IF_COMMAND("SETADDR") {
 			// Sets our bus address.
 			atou8(&tmp, frame->args[0]);
@@ -79,46 +79,46 @@ void Comms_HandleCommand(const comms_frame_t *frame) {
 			Comms_AddrReply(Config_GetOurAddress(), "ADDRSET OK");
 		
 			return;
-		}
+		} ELSIF_COMMAND("SETCLKCAL") {
+            // Sets the clock calibration factor.
+            int8_t itmp = 0;
+            atoi8(&itmp, frame->args[0]);
+            Config_SetClockCalFactor(itmp);
+            UART_Initialize(BUS_BAUD_RATE);
+
+            Comms_ReplyStart();
+            UART_SendString("CLKCAL ");
+            UART_SendInt8(Config_GetClockCalFactor());
+            Comms_ReplyEnd();
+
+            return;
+        } ELSIF_COMMAND("CLKCAL+") {
+            // Increases our clock calibration factor.
+            Config_SetClockCalFactor(Config_GetClockCalFactor() + 1);
+            UART_Initialize(BUS_BAUD_RATE);
+
+            Comms_ReplyStart();
+            UART_SendString("CLKCAL ");
+            UART_SendInt8(Config_GetClockCalFactor());
+            Comms_ReplyEnd();
+
+            return;
+        } ELSIF_COMMAND("CLKCAL-") {
+            // Increases our clock calibration factor.
+            Config_SetClockCalFactor(Config_GetClockCalFactor() - 1);
+            UART_Initialize(BUS_BAUD_RATE);
+
+            Comms_ReplyStart();
+            UART_SendString("CLKCAL ");
+            UART_SendInt8(Config_GetClockCalFactor());
+            Comms_ReplyEnd();
+
+            return;
+        }
 	}
-	*/
+    
 	IF_COMMAND("CLKCAL?") {
 		// Gets the clock calibration factor.
-		Comms_ReplyStart();
-		UART_SendString("CLKCAL ");
-		UART_SendInt8(Config_GetClockCalFactor());
-		Comms_ReplyEnd();
-
-		return;
-	} ELSIF_COMMAND("SETCLKCAL") {
-		// Sets the clock calibration factor.
-		int8_t itmp = 0;
-		atoi8(&itmp, frame->args[0]);
-		Config_SetClockCalFactor(itmp);
-		UART_Initialize(BUS_BAUD_RATE);
-
-		Comms_ReplyStart();
-		UART_SendString("CLKCAL ");
-		UART_SendInt8(Config_GetClockCalFactor());
-		Comms_ReplyEnd();
-
-		return;
-	} ELSIF_COMMAND("CLKCAL+") {
-		// Increases our clock calibration factor.
-		Config_SetClockCalFactor(Config_GetClockCalFactor() + 1);
-		UART_Initialize(BUS_BAUD_RATE);
-
-		Comms_ReplyStart();
-		UART_SendString("CLKCAL ");
-		UART_SendInt8(Config_GetClockCalFactor());
-		Comms_ReplyEnd();
-
-		return;
-	} ELSIF_COMMAND("CLKCAL-") {
-		// Increases our clock calibration factor.
-		Config_SetClockCalFactor(Config_GetClockCalFactor() - 1);
-		UART_Initialize(BUS_BAUD_RATE);
-
 		Comms_ReplyStart();
 		UART_SendString("CLKCAL ");
 		UART_SendInt8(Config_GetClockCalFactor());
