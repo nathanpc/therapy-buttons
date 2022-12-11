@@ -48,7 +48,7 @@ int main(void) {
 	RTC_Initialize(250, 500);
 	Config_Initialize();
 	PWM_Initialize();
-	UART_Initialize(BUS_BAUD_RATE);
+	UART_Initialize(BUS_BAUD_RATE+200);
 	Comms_Initialize(Config_GetOurAddress());
 	sei();
 	
@@ -193,6 +193,14 @@ void Comms_HandleCommand(const comms_frame_t *frame) {
 		Comms_ReplyEnd();
 		
 		return;
+	} ELSIF_COMMAND("PRESSED?") {
+		// Checks if the button is pressed.
+		Comms_ReplyStart();
+		UART_SendString("PRESSED ");
+		UART_SendChar((!(PORTC.IN & WALL_SW)) ? '1' : '0');
+		Comms_ReplyEnd();
+		
+		return;
 	} ELSIF_COMMAND("WHAT?") {
 		// What are we?
 		Comms_AddrReply(Config_GetOurAddress(), "WALLBUTTON");
@@ -276,16 +284,16 @@ ISR(USART0_RXC_vect) {
  * Interrupt service routine that's called when a pin in PORTC changes.
  */
 ISR(PORTC_PORT_vect) {
+#if 1
+    char reply[12];
+
+    // Send back our reply.
+    strcomb(reply, "TRIGD ", Comms_GetAddrStr());
+    Comms_AddrReply(0, reply);
+#endif
+
 	// Check if we are armed.
 	if (armed) {
-#if 0
-		char reply[12];
-		
-		// Send back our reply.
-		strcomb(reply, "TRIGD ", Comms_GetAddrStr());
-		Comms_AddrReply(0, reply);
-#endif
-		
 		// Reset the button state.
 		PWM_SetColor(idle_color);
 		armed = false;
